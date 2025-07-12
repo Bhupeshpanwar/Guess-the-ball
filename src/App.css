@@ -1,0 +1,205 @@
+.Gamecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(35, 35, 35, 0.9));
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  min-width: 400px;
+  margin: 50px auto;
+}
+
+/* Create a wrapper for the buttons to keep them in a row */
+.Gamecontainer .buttons {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+/* Override the gap for the buttons container */
+.Gamecontainer .shufflebuttons + .buttons {
+  margin-top: 0;
+}
+
+/* Create a virtual container for buttons */
+.Gamecontainer .buttons:first-of-type {
+  margin-left: 0;
+}
+
+.Gamecontainer .buttons:last-of-type {
+  margin-right: 0;
+}
+
+.shufflebuttons {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shufflebuttons:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.shufflebuttons:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.buttons {
+  background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  min-width: 80px;
+  width: auto;
+  height: 80px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 15px;
+  white-space: nowrap;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.buttons::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.buttons:hover::before {
+  transform: translateX(100%);
+}
+
+.buttons:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.buttons:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Game buttons container - arrange buttons in a row */
+.game-buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Add some responsive design */
+@media (max-width: 480px) {
+  .Gamecontainer {
+    padding: 20px;
+    margin: 20px auto;
+    min-width: 300px;
+  }
+  
+  .buttons {
+    min-width: 60px;
+    height: 60px;
+    font-size: 20px;
+    margin: 0 8px;
+    padding: 0 10px;
+  }
+  
+  .shufflebuttons {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Additional responsive breakpoint */
+@media (max-width: 360px) {
+  .Gamecontainer {
+    min-width: 280px;
+    padding: 15px;
+  }
+  
+  .buttons {
+    min-width: 50px;
+    height: 50px;
+    font-size: 16px;
+    margin: 0 5px;
+    padding: 0 8px;
+  }
+}
+/* Instructions styling */
+.Instructions {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.Instructions p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add some responsive design for instructions */
+@media (max-width: 480px) {
+  .Instructions {
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 90%;
+  }
+  
+  .Instructions p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .Instructions {
+    padding: 12px;
+    margin: 10px auto;
+  }
+  
+  .Instructions p {
+    font-size: 13px;
+  }
+}
